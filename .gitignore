@@ -1,0 +1,27 @@
+# Maven build output
+target/
+**/target/
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.ipr
+*.iws
+.project
+.classpath
+.settings/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local temp/scan files
+_scan.txt
+_gitcheck.txt
+_size.txt
+_env.txt
+payload.json
