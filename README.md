@@ -1,5 +1,7 @@
 # zbtech community
 
+> 社区/社群管理后端服务：Spring Boot + MyBatis-Plus 实现，提供用户、帖子、评论、分类、点赞、收藏、关注、消息、敏感词、协议、运营日志及管理后台 API。
+
 > 原 **foxbook**（开源社区论坛系统）后端的 **Java（Spring Boot 3.0）** 翻译版。
 > 本文档与代码由 AI 依据 `foxbook-php` 的数据库结构与接口逻辑生成，作为后续业务接口（点赞/评论/消息/鉴权等）翻译的基础骨架。
 
