@@ -12,8 +12,8 @@
 | JDK | 17 |
 | Spring Boot | 3.0.13 |
 | 持久层 | MyBatis-Plus 3.5.5（`mybatis-plus-spring-boot3-starter`） |
-| 数据库 | MySQL 5.7+（utf8mb4），地址 `10.10.9.171:3306` |
-| 缓存 / 队列 | Redis（`10.10.9.171:6379`） |
+| 数据库 | MySQL 5.7+（utf8mb4），地址见 `application.yml` 的 `spring.datasource.url`（默认 `localhost:3306`） |
+| 缓存 / 队列 | Redis（host/port 见 `application.yml` 的 `spring.data.redis`） |
 | 接口文档 | springdoc-openapi（Swagger UI：`/swagger-ui.html`） |
 
 ## 与原 foxbook 的关键改造
@@ -57,7 +57,7 @@ community/
 
 ## 数据库
 
-- 库名：`zbtech`（已在 `10.10.9.171` 直接创建，账号 `root` / `ttk123456`）。
+- 库名：`zbtech`（请自行在目标环境创建数据库与对应账号，账号密码配置在 `application.yml` 的 `spring.datasource` 中）。
 - 24 张表，前缀 `lb_`；主键 `INT AUTO_INCREMENT`。
 - 初始数据：超级管理员 `admin`（密码 `admin123`，bcrypt）、角色/菜单（24 条菜单树 + 角色全授权）、
   平台配置（微信小程序 / 阿里云 OSS / 站点 / 邮件）、认证标签、PC 顶部导航。
@@ -66,7 +66,7 @@ community/
 
 ```bash
 # 方式一：直接用 MySQL 客户端执行
-mysql -h10.10.9.171 -uroot -pttk123456 < sql/lb_community.sql
+mysql -h<db-host> -u<db-user> -p<db-password> < sql/lb_community.sql
 
 # 方式二：用自带脚本（需 pip install pymysql）
 python sql/_createdb.py

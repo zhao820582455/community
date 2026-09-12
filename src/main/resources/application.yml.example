@@ -1,0 +1,35 @@
+# ============================================================
+# 示例配置文件（application.yml.example）
+# 复制为 application.yml 后填入你自己的数据库连接信息。
+# 请勿将真实的 application.yml 提交到仓库。
+# ============================================================
+
+server:
+  port: 8080
+
+spring:
+  # ---- 数据源（MySQL） ----
+  datasource:
+    url: jdbc:mysql://<db-host>:3306/zbtech?useUnicode=true&characterEncoding=utf8mb4&serverTimezone=Asia/Shanghai&useSSL=false
+    username: <db-user>
+    password: <db-password>
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  # ---- Redis ----
+  data:
+    redis:
+      host: <redis-host>
+      port: 6379
+      password: <redis-password>   # 无密码时留空
+      database: 0
+
+  # ---- MyBatis-Plus ----
+  mybatis-plus:
+    mapper-locations: classpath*:/mapper/**/*.xml
+    configuration:
+      map-underscore-to-camel-case: true
+    global-config:
+      db-config:
+        table-prefix: lb_
+
+# 应用自定义配置（如有）在此追加

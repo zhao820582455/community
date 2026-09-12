@@ -25,3 +25,12 @@ _gitcheck.txt
 _size.txt
 _env.txt
 payload.json
+
+# ===== Secrets: keep real config & dev scripts OUT of the repo =====
+# 真实数据库连接/密码等配置请放在本地，勿提交
+src/main/resources/application.yml
+src/main/resources/application-*.yml
+# 含数据库账号密码的本地辅助脚本（保留在本地，不入库）
+sql/_createdb.py
+sql/_gen.py
+sql/_count_api.py
